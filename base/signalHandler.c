@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include <signal.h>
+#include "log.h"
 
 void signalHandler(int sigNo)
 {
     if(sigNo == SIGUSR1)
     {
-        printf("Capture SIGUSR1\n");
+        LOG_DEBUG("Capture SIGUSR1\n");
     }
     else
     {
         // TODO
     }
-    printf("signalHandler running ...\n");
-    printf("The Capture Sig numbers is:%d\n", sigNo);
+    LOG_DEBUG("signalHandler running ...\n");
+    LOG_DEBUG("The Capture Sig numbers is:%d\n", sigNo);
 }
 
 int main(int argc, char* argv[])
